@@ -116,7 +116,7 @@ if ($_GET["vaadin-grid-data"]) {
         $start = $_GET["offset"];
         $limit = $_GET["size"];
         if ($start == intval($start) && $limit == intval($limit)) {
-            echo json_encode($grid->getData($_GET["offset"], $_GET["size"]));
+            echo json_encode($grid->getData($start, $limit));
         }
     }
 }
