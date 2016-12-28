@@ -109,9 +109,10 @@ function(params, callback) {
     }
 }
 // Serve data for lazy loading
-if ($_GET["vaadin-grid-data"]) {
+$gridDataRequest = $_GET["vaadin-grid-data"];
+if (isset($gridDataRequest)) {
     session_start();
-    $grid = $_SESSION["vaadin-grid"][$_GET["vaadin-grid-data"]];
+    $grid = $_SESSION["vaadin-grid"][$gridDataRequest];
     if (isset($grid)) {
         $start = $_GET["offset"];
         $limit = $_GET["size"];
